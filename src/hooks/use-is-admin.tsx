@@ -1,0 +1,38 @@
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/hooks/use-auth";
+
+function useIsAdminQuery() {
+  const { user } = useAuth();
+  return useQuery({
+    queryKey: ["is-admin", user?.id],
+    enabled: !!user?.id,
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", user!.id)
+        .eq("role", "admin")
+        .maybeSingle();
+      if (error) throw error;
+      return !!data;
+    },
+  });
+}
+
+export function useIsAdmin(): boolean {
+  const { data } = useIsAdminQuery();
+  return data === true;
+}
+
+export function useIsAdminStatus(): { isAdmin: boolean; isLoading: boolean } {
+  const { user, loading } = useAuth();
+  const q = useIsAdminQuery();
+  return {
+    isAdmin: q.data === true,
+    isLoading: loading || (!!user && q.isLoading),
+  };
+}
+
+// Alias for backwards compat with admin pages
+export const useIsAdminWithLoading = useIsAdminStatus;
