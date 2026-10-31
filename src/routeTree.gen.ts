@@ -9,50 +9,35 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SignupRouteImport } from './routes/signup'
-import { Route as ResetPasswordRouteImport } from './routes/reset-password'
-import { Route as LoginRouteImport } from './routes/login'
-import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
-import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppRouteImport } from './routes/app'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as SignupRouteImport } from './routes/signup'
 import { Route as AppIndexRouteImport } from './routes/app/index'
-import { Route as AppTopicsRouteImport } from './routes/app/topics'
-import { Route as AppTermsRouteImport } from './routes/app/terms'
-import { Route as AppSourcesRouteImport } from './routes/app/sources'
-import { Route as AppSearchRouteImport } from './routes/app/search'
-import { Route as AppPipelineRouteImport } from './routes/app/pipeline'
-import { Route as AppOnboardingRouteImport } from './routes/app/onboarding'
-import { Route as AppNotificationsRouteImport } from './routes/app/notifications'
-import { Route as AppIntegrationsRouteImport } from './routes/app/integrations'
-import { Route as AppEntitiesRouteImport } from './routes/app/entities'
-import { Route as AppAlertsRouteImport } from './routes/app/alerts'
 import { Route as AppAccountRouteImport } from './routes/app/account'
+import { Route as AppAlertsRouteImport } from './routes/app/alerts'
+import { Route as AppEntitiesRouteImport } from './routes/app/entities'
+import { Route as AppIntegrationsRouteImport } from './routes/app/integrations'
+import { Route as AppNotificationsRouteImport } from './routes/app/notifications'
+import { Route as AppOnboardingRouteImport } from './routes/app/onboarding'
+import { Route as AppPipelineRouteImport } from './routes/app/pipeline'
+import { Route as AppSearchRouteImport } from './routes/app/search'
+import { Route as AppSourcesRouteImport } from './routes/app/sources'
+import { Route as AppTermsRouteImport } from './routes/app/terms'
+import { Route as AppTopicsRouteImport } from './routes/app/topics'
 import { Route as AppAdminIndexRouteImport } from './routes/app/admin/index'
-import { Route as AppRadarTermIdRouteImport } from './routes/app/radar.$termId'
-import { Route as AppAdminTeamRouteImport } from './routes/app/admin/team'
-import { Route as AppAdminSourcesRouteImport } from './routes/app/admin/sources'
-import { Route as AppAdminRunsRouteImport } from './routes/app/admin/runs'
-import { Route as AppAdminDlqRouteImport } from './routes/app/admin/dlq'
 import { Route as AppAdminCronRouteImport } from './routes/app/admin/cron'
+import { Route as AppAdminDlqRouteImport } from './routes/app/admin/dlq'
+import { Route as AppAdminRunsRouteImport } from './routes/app/admin/runs'
+import { Route as AppAdminSourcesRouteImport } from './routes/app/admin/sources'
+import { Route as AppAdminTeamRouteImport } from './routes/app/admin/team'
+import { Route as AppRadarTermIdRouteImport } from './routes/app/radar.$termId'
 
-const SignupRoute = SignupRouteImport.update({
-  id: '/signup',
-  path: '/signup',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResetPasswordRoute = ResetPasswordRouteImport.update({
-  id: '/reset-password',
-  path: '/reset-password',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
-  id: '/forgot-password',
-  path: '/forgot-password',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppRoute = AppRouteImport.update({
@@ -60,9 +45,24 @@ const AppRoute = AppRouteImport.update({
   path: '/app',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppIndexRoute = AppIndexRouteImport.update({
@@ -70,49 +70,9 @@ const AppIndexRoute = AppIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AppRoute,
 } as any)
-const AppTopicsRoute = AppTopicsRouteImport.update({
-  id: '/topics',
-  path: '/topics',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppTermsRoute = AppTermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppSourcesRoute = AppSourcesRouteImport.update({
-  id: '/sources',
-  path: '/sources',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppSearchRoute = AppSearchRouteImport.update({
-  id: '/search',
-  path: '/search',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppPipelineRoute = AppPipelineRouteImport.update({
-  id: '/pipeline',
-  path: '/pipeline',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppOnboardingRoute = AppOnboardingRouteImport.update({
-  id: '/onboarding',
-  path: '/onboarding',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppNotificationsRoute = AppNotificationsRouteImport.update({
-  id: '/notifications',
-  path: '/notifications',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppIntegrationsRoute = AppIntegrationsRouteImport.update({
-  id: '/integrations',
-  path: '/integrations',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppEntitiesRoute = AppEntitiesRouteImport.update({
-  id: '/entities',
-  path: '/entities',
+const AppAccountRoute = AppAccountRouteImport.update({
+  id: '/account',
+  path: '/account',
   getParentRoute: () => AppRoute,
 } as any)
 const AppAlertsRoute = AppAlertsRouteImport.update({
@@ -120,9 +80,49 @@ const AppAlertsRoute = AppAlertsRouteImport.update({
   path: '/alerts',
   getParentRoute: () => AppRoute,
 } as any)
-const AppAccountRoute = AppAccountRouteImport.update({
-  id: '/account',
-  path: '/account',
+const AppEntitiesRoute = AppEntitiesRouteImport.update({
+  id: '/entities',
+  path: '/entities',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppIntegrationsRoute = AppIntegrationsRouteImport.update({
+  id: '/integrations',
+  path: '/integrations',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNotificationsRoute = AppNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppOnboardingRoute = AppOnboardingRouteImport.update({
+  id: '/onboarding',
+  path: '/onboarding',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPipelineRoute = AppPipelineRouteImport.update({
+  id: '/pipeline',
+  path: '/pipeline',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSearchRoute = AppSearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSourcesRoute = AppSourcesRouteImport.update({
+  id: '/sources',
+  path: '/sources',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTermsRoute = AppTermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTopicsRoute = AppTopicsRouteImport.update({
+  id: '/topics',
+  path: '/topics',
   getParentRoute: () => AppRoute,
 } as any)
 const AppAdminIndexRoute = AppAdminIndexRouteImport.update({
@@ -130,24 +130,9 @@ const AppAdminIndexRoute = AppAdminIndexRouteImport.update({
   path: '/admin/',
   getParentRoute: () => AppRoute,
 } as any)
-const AppRadarTermIdRoute = AppRadarTermIdRouteImport.update({
-  id: '/radar/$termId',
-  path: '/radar/$termId',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppAdminTeamRoute = AppAdminTeamRouteImport.update({
-  id: '/admin/team',
-  path: '/admin/team',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppAdminSourcesRoute = AppAdminSourcesRouteImport.update({
-  id: '/admin/sources',
-  path: '/admin/sources',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppAdminRunsRoute = AppAdminRunsRouteImport.update({
-  id: '/admin/runs',
-  path: '/admin/runs',
+const AppAdminCronRoute = AppAdminCronRouteImport.update({
+  id: '/admin/cron',
+  path: '/admin/cron',
   getParentRoute: () => AppRoute,
 } as any)
 const AppAdminDlqRoute = AppAdminDlqRouteImport.update({
@@ -155,9 +140,24 @@ const AppAdminDlqRoute = AppAdminDlqRouteImport.update({
   path: '/admin/dlq',
   getParentRoute: () => AppRoute,
 } as any)
-const AppAdminCronRoute = AppAdminCronRouteImport.update({
-  id: '/admin/cron',
-  path: '/admin/cron',
+const AppAdminRunsRoute = AppAdminRunsRouteImport.update({
+  id: '/admin/runs',
+  path: '/admin/runs',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAdminSourcesRoute = AppAdminSourcesRouteImport.update({
+  id: '/admin/sources',
+  path: '/admin/sources',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAdminTeamRoute = AppAdminTeamRouteImport.update({
+  id: '/admin/team',
+  path: '/admin/team',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppRadarTermIdRoute = AppRadarTermIdRouteImport.update({
+  id: '/radar/$termId',
+  path: '/radar/$termId',
   getParentRoute: () => AppRoute,
 } as any)
 
@@ -336,32 +336,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/signup': {
-      id: '/signup'
-      path: '/signup'
-      fullPath: '/signup'
-      preLoaderRoute: typeof SignupRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reset-password': {
-      id: '/reset-password'
-      path: '/reset-password'
-      fullPath: '/reset-password'
-      preLoaderRoute: typeof ResetPasswordRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login': {
-      id: '/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/forgot-password': {
-      id: '/forgot-password'
-      path: '/forgot-password'
-      fullPath: '/forgot-password'
-      preLoaderRoute: typeof ForgotPasswordRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/app': {
@@ -371,11 +350,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/app/': {
@@ -385,67 +385,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppIndexRouteImport
       parentRoute: typeof AppRoute
     }
-    '/app/topics': {
-      id: '/app/topics'
-      path: '/topics'
-      fullPath: '/app/topics'
-      preLoaderRoute: typeof AppTopicsRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/terms': {
-      id: '/app/terms'
-      path: '/terms'
-      fullPath: '/app/terms'
-      preLoaderRoute: typeof AppTermsRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/sources': {
-      id: '/app/sources'
-      path: '/sources'
-      fullPath: '/app/sources'
-      preLoaderRoute: typeof AppSourcesRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/search': {
-      id: '/app/search'
-      path: '/search'
-      fullPath: '/app/search'
-      preLoaderRoute: typeof AppSearchRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/pipeline': {
-      id: '/app/pipeline'
-      path: '/pipeline'
-      fullPath: '/app/pipeline'
-      preLoaderRoute: typeof AppPipelineRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/onboarding': {
-      id: '/app/onboarding'
-      path: '/onboarding'
-      fullPath: '/app/onboarding'
-      preLoaderRoute: typeof AppOnboardingRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/notifications': {
-      id: '/app/notifications'
-      path: '/notifications'
-      fullPath: '/app/notifications'
-      preLoaderRoute: typeof AppNotificationsRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/integrations': {
-      id: '/app/integrations'
-      path: '/integrations'
-      fullPath: '/app/integrations'
-      preLoaderRoute: typeof AppIntegrationsRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/entities': {
-      id: '/app/entities'
-      path: '/entities'
-      fullPath: '/app/entities'
-      preLoaderRoute: typeof AppEntitiesRouteImport
+    '/app/account': {
+      id: '/app/account'
+      path: '/account'
+      fullPath: '/app/account'
+      preLoaderRoute: typeof AppAccountRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/alerts': {
@@ -455,11 +399,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAlertsRouteImport
       parentRoute: typeof AppRoute
     }
-    '/app/account': {
-      id: '/app/account'
-      path: '/account'
-      fullPath: '/app/account'
-      preLoaderRoute: typeof AppAccountRouteImport
+    '/app/entities': {
+      id: '/app/entities'
+      path: '/entities'
+      fullPath: '/app/entities'
+      preLoaderRoute: typeof AppEntitiesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/integrations': {
+      id: '/app/integrations'
+      path: '/integrations'
+      fullPath: '/app/integrations'
+      preLoaderRoute: typeof AppIntegrationsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/notifications': {
+      id: '/app/notifications'
+      path: '/notifications'
+      fullPath: '/app/notifications'
+      preLoaderRoute: typeof AppNotificationsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/onboarding': {
+      id: '/app/onboarding'
+      path: '/onboarding'
+      fullPath: '/app/onboarding'
+      preLoaderRoute: typeof AppOnboardingRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/pipeline': {
+      id: '/app/pipeline'
+      path: '/pipeline'
+      fullPath: '/app/pipeline'
+      preLoaderRoute: typeof AppPipelineRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/search': {
+      id: '/app/search'
+      path: '/search'
+      fullPath: '/app/search'
+      preLoaderRoute: typeof AppSearchRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/sources': {
+      id: '/app/sources'
+      path: '/sources'
+      fullPath: '/app/sources'
+      preLoaderRoute: typeof AppSourcesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/terms': {
+      id: '/app/terms'
+      path: '/terms'
+      fullPath: '/app/terms'
+      preLoaderRoute: typeof AppTermsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/topics': {
+      id: '/app/topics'
+      path: '/topics'
+      fullPath: '/app/topics'
+      preLoaderRoute: typeof AppTopicsRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/admin/': {
@@ -469,32 +469,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAdminIndexRouteImport
       parentRoute: typeof AppRoute
     }
-    '/app/radar/$termId': {
-      id: '/app/radar/$termId'
-      path: '/radar/$termId'
-      fullPath: '/app/radar/$termId'
-      preLoaderRoute: typeof AppRadarTermIdRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/admin/team': {
-      id: '/app/admin/team'
-      path: '/admin/team'
-      fullPath: '/app/admin/team'
-      preLoaderRoute: typeof AppAdminTeamRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/admin/sources': {
-      id: '/app/admin/sources'
-      path: '/admin/sources'
-      fullPath: '/app/admin/sources'
-      preLoaderRoute: typeof AppAdminSourcesRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/app/admin/runs': {
-      id: '/app/admin/runs'
-      path: '/admin/runs'
-      fullPath: '/app/admin/runs'
-      preLoaderRoute: typeof AppAdminRunsRouteImport
+    '/app/admin/cron': {
+      id: '/app/admin/cron'
+      path: '/admin/cron'
+      fullPath: '/app/admin/cron'
+      preLoaderRoute: typeof AppAdminCronRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/admin/dlq': {
@@ -504,11 +483,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAdminDlqRouteImport
       parentRoute: typeof AppRoute
     }
-    '/app/admin/cron': {
-      id: '/app/admin/cron'
-      path: '/admin/cron'
-      fullPath: '/app/admin/cron'
-      preLoaderRoute: typeof AppAdminCronRouteImport
+    '/app/admin/runs': {
+      id: '/app/admin/runs'
+      path: '/admin/runs'
+      fullPath: '/app/admin/runs'
+      preLoaderRoute: typeof AppAdminRunsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/admin/sources': {
+      id: '/app/admin/sources'
+      path: '/admin/sources'
+      fullPath: '/app/admin/sources'
+      preLoaderRoute: typeof AppAdminSourcesRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/admin/team': {
+      id: '/app/admin/team'
+      path: '/admin/team'
+      fullPath: '/app/admin/team'
+      preLoaderRoute: typeof AppAdminTeamRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/radar/$termId': {
+      id: '/app/radar/$termId'
+      path: '/radar/$termId'
+      fullPath: '/app/radar/$termId'
+      preLoaderRoute: typeof AppRadarTermIdRouteImport
       parentRoute: typeof AppRoute
     }
   }
